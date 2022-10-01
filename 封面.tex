@@ -1,0 +1,103 @@
+% !TeX root = ./main.tex
+
+% \title{\Title}
+% \author{Haskely}
+% \date{\Date}
+% \maketitle
+
+\newcommand{\ecnumcc}[1]{\multicolumn{1}{c}{\underline{\makebox[10em][s]{#1}}}}
+
+\begin{titlepage}
+\pdfbookmark[0]{封面}{Titlepage}
+\noindent \Year 届研究生硕士学位论文
+
+\noindent \makebox[4em][s]{分类号：}\underline{\makebox[6em][s]{}}   \hfill \makebox[5em][s]{学校名称：}\underline{\makebox[6em][s]{华东师范大学}}
+
+\noindent \makebox[4em][s]{密级：}\underline{\makebox[6em][s]{}}     \hfill \makebox[5em][s]{学号：}\underline{\makebox[6em][s]{\StudentID}}
+
+\vspace{4em}
+
+\begin{center}
+    % \begin{figure*}[H]
+        \includegraphics[width=0.90\textwidth]{images/ECNUThesisLogo.pdf}
+    % \end{figure*}
+
+    \bigskip
+
+    \zihao{-2}\textbf{East China Normal University}
+
+    \zihao{2} 硕士学位论文
+
+    \zihao{-2} \textbf{MASTER'S  DISSERTATION}
+
+    \vspace{3em}
+
+    {
+        \bfseries
+        \zihao{1}
+        论文题目：\parbox[t]{11em}{\Title}
+    }
+
+    \vfill
+
+    {
+        \bfseries
+        \zihao{4}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{p{0cm}p{5.5em}@{\extracolsep{0.5ex}}cc}
+            ~ & 院 \hfill 系： & & \ecnumcc{\Department} \\
+            ~ & 专 \hfill 业： & & \ecnumcc{\Major}\\
+            ~ & 研 \hfill 究 \hfill 方 \hfill 向：& & \ecnumcc{\Direction}\\
+            ~ & 指 \hfill 导 \hfill 老 \hfill 师：& & \ecnumcc{\Supervisor}\\
+            ~ & 学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：& & \ecnumcc{\Candidate}\\
+        \end{tabular}
+    }
+    
+
+    \vfill 
+
+    \Date
+\end{center}    
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\thispagestyle{empty}
+\noindent Dissertation for master degree in \Year
+
+\hfill University Code: 10269
+
+\hfill Student ID: \StudentID
+
+\vspace{5em}
+\begin{center}
+    {
+        \zihao{1} \textbf{East China Normal University}
+    }
+
+    \vspace{6em}
+
+    {
+        \bfseries \zihao{3} Title: \parbox[t]{20em}{\TitleEn}
+    }
+    
+
+    \newcommand{\bsEn}[1]{\underline{\makebox[22em][l]{#1}}}
+    \vfill
+    {   
+        \bfseries
+        \zihao{-4}\renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{rl}
+        Department:         & \bsEn{\DepartmentEn} \\
+        Major:              & \bsEn{\MajorEn} \\
+        Research Direction: & \bsEn{\DirectionEn} \\
+        Supervisor:         & \bsEn{\SupervisorEn} \\
+        Candidate:          & \bsEn{\CandidateEn} \\
+    \end{tabular}
+    }
+    \vfill
+
+    \zihao{-4}\DateEn
+\end{center}
+\end{titlepage}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}

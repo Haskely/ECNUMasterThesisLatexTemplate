@@ -1,0 +1,133 @@
+% !TeX root = ./main.tex
+
+% 常用定式
+\newcommand{\R}[1][]{\mathbb{R}^{#1}}
+\newcommand{\N}[1][]{\mathbb{N}^{#1}}
+\newcommand{\C}[1][]{\mathcal{C}^{#1}}
+
+\newcommand{\Lp}[1][p]{L^{#1}}
+\newcommand{\Wkp}[2][p]{\mathcal{W}^{#2,#1}}
+
+\newcommand{\matfmt}[1]{\mathbf{#1}}
+
+\newcommand{\toD}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\toDsqua}[2]{\frac{\partial^{2}{#1}}{\partial{#2}^{2}}}
+\newcommand{\toDsec}[3]{\frac{\partial^{2}{#1}}{\partial{#2}\partial{#3}}}
+\newcommand{\diff}{\mathrm{d}}
+
+\newcommand{\toInt}[3]{\int_{#1} {#2} \diff {#3}}
+\newcommand{\toOInt}[3]{\oint_{#1} {#2} \diff \mathbf{s}(#3)}
+
+\newcommand{\gradOp}{\nabla}
+\newcommand{\laplaceOp}{\Delta}
+% 耦合模型
+\newcommand{\toDomain}[1]{{#1} \times T}
+\newcommand{\toInit}[1]{{#1} \times \{t_0\}}
+
+%% 自由流
+\newcommand{\Uf}{\vec{u}_f} % 自由流速度场函数
+\newcommand{\Ufi}[1][i]{u_{f_{x_{#1}}}}
+\newcommand{\pf}{p_f}
+\newcommand{\gf}{\vec{g}_f}
+\newcommand{\gfi}[1][i]{g_{f_{x_#1}}}
+
+\newcommand{\Of}{\Omega_f} % 自由流空间区域
+\newcommand{\Bf}{\Gamma_f}
+\newcommand{\Df}{\toDomain{\Of}}
+\newcommand{\BDf}{\toDomain{\Bf}}
+\newcommand{\IDf}{\toInit{\Of}}
+
+\newcommand{\opT}[2]{\mathbf{T}(#1,#2)}
+\newcommand{\opD}[1]{\mathbf{D}(#1)}
+\newcommand{\opTf}{\opT{\Uf}{\pf}}
+\newcommand{\opDf}{\opD{\Uf}}
+
+%% 多孔介质流
+\newcommand{\Up}{\vec{u}_p}
+\newcommand{\Upi}[1][i]{u_{p_{x_{#1}}}}
+\newcommand{\pp}{\phi}
+\newcommand{\fp}{f_p}
+
+\newcommand{\Op}{\Omega_p} % Darcy 空间区域
+\newcommand{\Bp}{\Gamma_p}
+\newcommand{\Dp}{\toDomain{\Op}}
+\newcommand{\BDp}{\toDomain{\Bp}}
+\newcommand{\IDp}{\toInit{\Op}}
+
+%% 交界面
+\newcommand{\iB}{\tilde{\Gamma}}
+\newcommand{\iBD}{\toDomain{\iB}}
+
+%神经网络
+
+\newcommand{\params}{\theta}
+\newcommand{\paramset}{\Theta}
+
+\newcommand{\NN}{\mathcal{N}}
+
+% 深度学习优化算法
+\newcommand{\toTset}[1]{\mathcal{T}_{#1}}
+
+\newcommand{\x}{\hat{x}} % 采样点 x
+
+\newcommand{\Loss}[3]{\mathcal{L}_{#1}({#2};{#3})}
+
+\newcommand{\TX}{\toTset{\hat{X}}}
+\newcommand{\LossX}{\Loss{}{\params}{\TX}}
+
+\newcommand{\TO}{\toTset{\Omega}}
+\newcommand{\LossO}{\Loss{}{\params}{\TO}}
+
+\newcommand{\TDf}{\toTset{\Df}}
+\newcommand{\TBDf}{\toTset{\BDf}}
+\newcommand{\TIDf}{\toTset{\IDf}}
+\newcommand{\Lossf}{\Loss{f}{\params_f}{\TDf,\TBDf,\TIDf}}
+
+\newcommand{\TDp}{\toTset{\Dp}}
+\newcommand{\TBDp}{\toTset{\BDp}}
+\newcommand{\TIDp}{\toTset{\IDp}}
+\newcommand{\Lossp}{\Loss{p}{\params_p}{\TDp,\TBDp,\TIDp}}
+
+\newcommand{\TiBD}{\toTset{\iBD}}
+\newcommand{\Lossi}{\Loss{\iB}{\params_f,\params_p}{\TiBD}}
+
+\newcommand{\Lossall}{\Loss{total}{\params_f,\params_p}{\TDf,\TBDf,\TIDf,\TDp,\TBDp,\TIDp,\TiBD}}
+
+
+\newcommand{\toscaLossPre}[2]{
+        \frac{1}{N_{#1}} 
+        \sum_{\substack{#2 \in #1}} 
+}
+
+\newcommand{\toLoss}[4]{
+        \toscaLossPre{#1}{#2}
+        \sum_{i=1}^{#3}
+        \left|
+            {#4}
+        \right|^{p}
+}
+
+\newcommand{\toscaLoss}[3]{
+        \toscaLossPre{#1}{#2}
+        \left|
+            #3
+        \right|^{p}
+}
+
+\newcommand {\compx}[1]{{{}#1}_{x_i} (\x) }
+
+
+\newcommand{\NUf}{\Uf^{\NN}}
+\newcommand{\NUfi}[1][i]{\Ufi[#1]^{\NN}}
+\newcommand{\Npf}{\pf^{\NN}}
+
+\newcommand{\NUp}{\Up^\NN}
+\newcommand{\NUpi}[1][i]{\Upi[#1]^{\NN}}
+\newcommand{\Npp}{\pp^{\NN}}
+
+\newcommand{\tUf}{\Uf^*}
+\newcommand{\tUfi}[1][i]{\Ufi[#1]^*}
+\newcommand{\tpf}{\pf^*}
+\newcommand{\tUp}{\Up^*}
+\newcommand{\tUpi}[1][i]{\Upi[#1]^*}
+\newcommand{\tpp}{\pp^*}

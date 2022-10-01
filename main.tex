@@ -1,0 +1,43 @@
+% \includeonly{cover}
+
+
+% 用 xelatex 编译
+\input{设置}
+\input{配置}
+
+
+\begin{document}
+
+\include{封面}
+
+\include{声明页}
+
+\include{答辩委员会成员}
+
+\frontmatter
+
+\include{摘要}
+
+\tableofcontents
+
+\mainmatter
+
+\input{符号定义}
+
+\include{第一章}
+
+\include{第二章}
+
+\include{第三章}
+
+\include{第四章}
+
+\include{第五章}
+
+\backmatter
+
+\printbibliography[heading=bibintoc,title={参考文献}] % 使参考文献出现在目录中
+
+\include{致谢}
+
+\end{document}
